@@ -1,5 +1,4 @@
 # 2. Закодируйте любую строку по алгоритму Хаффмана.
-import heapq
 from collections import Counter, deque
 
 
@@ -28,7 +27,6 @@ class Node:
 
 def get_table(node, code=''):
     table = {}
-    # print(node.letter, node.freq)
     if node.letter is not None:
         table = {node.letter: code}
     else:
@@ -46,7 +44,6 @@ def haffman(string):
         freq = sum([_.freq for _ in childs])
         nodes.append(Node(None, freq, childs))
     table = get_table(nodes[0])
-    # print(table)
     return ''.join([table[_] for _ in string])
 
 
